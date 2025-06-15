@@ -115,14 +115,17 @@ const Contact = () => {
                 Located in Karla, Ta. Anjangaon Surji, Dist. Amravati, Maharashtra
               </p>
               
-              <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🗺️</div>
-                  <p className="text-gray-600">Interactive map will be available soon</p>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Contact us for detailed directions to our facilities
-                  </p>
-                </div>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.915022197546!2d77.1822512!3d21.153430200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd71d0036a4b48d%3A0x9aa935b10d0fc29!2sSankalp%20Vyasanmukti%20Kendra(%20IRCA)Karla%20TQ.Anjangaon%20surji%20Dist.Amravati!5e1!3m2!1sen!2sin!4v1749989732971!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="300" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true}
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                />
               </div>
             </div>
           </div>
