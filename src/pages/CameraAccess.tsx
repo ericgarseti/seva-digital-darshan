@@ -3,41 +3,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Camera } from "lucide-react";
 
 const CameraAccess = () => {
-  const cameraFeeds = [
-    {
-      id: 1,
-      name: "Main Building - Entrance",
-      location: "Karla Main Office",
-      status: "Live",
-      description: "View of main entrance and reception area"
-    },
-    {
-      id: 2,
-      name: "IRCA Center - Common Area",
-      location: "Sankalp IRCA, Karla",
-      status: "Live",
-      description: "Common area and counseling center"
-    },
-    {
-      id: 3,
-      name: "Administrative Block",
-      location: "Main Campus",
-      status: "Live", 
-      description: "Administrative offices and meeting rooms"
-    },
-    {
-      id: 4,
-      name: "Community Hall",
-      location: "Karla Campus",
-      status: "Live",
-      description: "Community events and group activities"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -161,57 +129,6 @@ const CameraAccess = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Live Camera Feeds */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Live Camera Feeds</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Real-time views of our facilities ensuring transparency and accountability
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {cameraFeeds.map((feed) => (
-              <Card key={feed.id} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl text-gray-900">{feed.name}</CardTitle>
-                      <CardDescription className="text-violet-600">{feed.location}</CardDescription>
-                    </div>
-                    <Badge variant="secondary" className="bg-green-100 text-green-800">
-                      🔴 {feed.status}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  {/* Camera Feed Placeholder */}
-                  <div className="bg-gray-800 rounded-lg h-48 mb-4 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <Camera className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                      <p className="text-sm opacity-75">Live Feed</p>
-                      <p className="text-xs opacity-50">Access via iVMS-4500 app</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-700 text-sm mb-4">{feed.description}</p>
-                  
-                  <div className="flex justify-between items-center">
-                    <div className="text-xs text-gray-500">
-                      Last updated: {new Date().toLocaleTimeString()}
-                    </div>
-                    <Button size="sm" variant="outline" className="border-violet-300 text-violet-700 hover:bg-violet-50">
-                      Open in App
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
