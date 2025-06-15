@@ -3,41 +3,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Camera } from "lucide-react";
 
 const CameraAccess = () => {
-  const cameraFeeds = [
-    {
-      id: 1,
-      name: "Main Building - Entrance",
-      location: "Karla Main Office",
-      status: "Live",
-      description: "View of main entrance and reception area"
-    },
-    {
-      id: 2,
-      name: "IRCA Center - Common Area",
-      location: "Sankalp IRCA, Karla",
-      status: "Live",
-      description: "Common area and counseling center"
-    },
-    {
-      id: 3,
-      name: "Administrative Block",
-      location: "Main Campus",
-      status: "Live", 
-      description: "Administrative offices and meeting rooms"
-    },
-    {
-      id: 4,
-      name: "Community Hall",
-      location: "Karla Campus",
-      status: "Live",
-      description: "Community events and group activities"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -53,6 +21,91 @@ const CameraAccess = () => {
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
               Promoting transparency through real-time access to our facilities and operations
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile App Access Section */}
+      <section className="py-16 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Mobile App Access</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Access live camera feeds on your mobile device using the iVMS-4500 app
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* QR Code Section */}
+            <div className="text-center">
+              <Card className="border-2 border-blue-200">
+                <CardHeader>
+                  <CardTitle className="text-blue-800">Scan QR Code for Quick Setup</CardTitle>
+                  <CardDescription>
+                    Use your phone's camera to scan this QR code and add our camera system to your iVMS-4500 app
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex justify-center">
+                  <div className="bg-white p-4 rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/c3ddb4e9-3637-497a-a645-f07392c2dcdd.png" 
+                      alt="QR Code for iVMS-4500 Setup"
+                      className="w-64 h-64 object-contain"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Setup Instructions */}
+            <div>
+              <Card className="border-l-4 border-l-blue-500">
+                <CardHeader>
+                  <CardTitle className="text-blue-800">Setup Instructions</CardTitle>
+                  <CardDescription>Follow these steps to access our camera feeds</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                      <div>
+                        <p className="font-semibold">Install iVMS-4500 App</p>
+                        <p className="text-sm text-gray-600">Download from Google Play Store or App Store</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                      <div>
+                        <p className="font-semibold">Open App & Access Device List</p>
+                        <p className="text-sm text-gray-600">Look for "Device List" option in the top right</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                      <div>
+                        <p className="font-semibold">Add Device</p>
+                        <p className="text-sm text-gray-600">Click "Add device" and scan the QR code</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                      <div>
+                        <p className="font-semibold">Scan QR Code</p>
+                        <p className="text-sm text-gray-600">Use the QR code scanner in the iVMS app</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <h4 className="font-semibold text-gray-800 mb-2">Login Credentials</h4>
+                    <div className="space-y-1 text-sm">
+                      <p><span className="font-medium">Username:</span> admin</p>
+                      <p><span className="font-medium">Password:</span> pass@123</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -80,57 +133,6 @@ const CameraAccess = () => {
         </div>
       </section>
 
-      {/* Live Camera Feeds */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Live Camera Feeds</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Real-time views of our facilities ensuring transparency and accountability
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {cameraFeeds.map((feed) => (
-              <Card key={feed.id} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl text-gray-900">{feed.name}</CardTitle>
-                      <CardDescription className="text-violet-600">{feed.location}</CardDescription>
-                    </div>
-                    <Badge variant="secondary" className="bg-green-100 text-green-800">
-                      🔴 {feed.status}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  {/* Camera Feed Placeholder */}
-                  <div className="bg-gray-800 rounded-lg h-48 mb-4 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <Camera className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                      <p className="text-sm opacity-75">Live Feed</p>
-                      <p className="text-xs opacity-50">Camera feed will be available soon</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-700 text-sm mb-4">{feed.description}</p>
-                  
-                  <div className="flex justify-between items-center">
-                    <div className="text-xs text-gray-500">
-                      Last updated: {new Date().toLocaleTimeString()}
-                    </div>
-                    <Button size="sm" variant="outline" className="border-violet-300 text-violet-700 hover:bg-violet-50">
-                      View Fullscreen
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Access Information */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,7 +146,7 @@ const CameraAccess = () => {
                 <CardContent>
                   <ul className="list-disc list-inside text-gray-700 space-y-2">
                     <li>Camera feeds are available 24/7 for public viewing</li>
-                    <li>No registration required for basic viewing access</li>
+                    <li>Use provided credentials for mobile app access</li>
                     <li>Feeds focus on common areas and public spaces</li>
                     <li>Privacy of patients and beneficiaries is strictly maintained</li>
                     <li>Recording or screenshots are not permitted</li>
@@ -202,13 +204,13 @@ const CameraAccess = () => {
             <Card className="text-center">
               <CardHeader>
                 <div className="w-12 h-12 bg-violet-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl">🔄</span>
+                  <span className="text-xl">📱</span>
                 </div>
-                <CardTitle className="text-lg">24/7 Streaming</CardTitle>
+                <CardTitle className="text-lg">Mobile Access</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Continuous live streaming available around the clock for maximum transparency.
+                  Access feeds through iVMS-4500 mobile app for convenient monitoring on the go.
                 </p>
               </CardContent>
             </Card>
