@@ -1,10 +1,7 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 
 const Contact = () => {
@@ -26,12 +23,6 @@ const Contact = () => {
     { label: "NGO Darpan ID", value: "MH/00003361", date: "Active" }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted");
-  };
-
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -51,10 +42,10 @@ const Contact = () => {
       {/* Contact Information */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-4xl mx-auto">
             {/* Contact Details */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Get In Touch</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Get In Touch</h2>
               
               {contactInfo.map((contact, index) => (
                 <Card key={index} className="mb-6 border-l-4 border-l-emerald-500">
@@ -100,8 +91,8 @@ const Contact = () => {
 
               {/* Quick Actions */}
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-gray-900">Quick Actions</h3>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <h3 className="text-xl font-bold text-gray-900 text-center">Quick Actions</h3>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button className="bg-emerald-600 hover:bg-emerald-700">
                     <a href="tel:9423133906" className="flex items-center">
                       📞 Call Now
@@ -114,73 +105,6 @@ const Contact = () => {
                   </Button>
                 </div>
               </div>
-            </div>
-
-            {/* Contact Form */}
-            <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900">Send Us a Message</CardTitle>
-                  <p className="text-gray-600">
-                    Fill out the form below and we'll get back to you as soon as possible.
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                          First Name *
-                        </label>
-                        <Input id="firstName" type="text" required className="w-full" />
-                      </div>
-                      <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                          Last Name *
-                        </label>
-                        <Input id="lastName" type="text" required className="w-full" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <Input id="email" type="email" required className="w-full" />
-                    </div>
-
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
-                      </label>
-                      <Input id="phone" type="tel" className="w-full" />
-                    </div>
-
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                        Subject *
-                      </label>
-                      <Input id="subject" type="text" required className="w-full" />
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Message *
-                      </label>
-                      <Textarea 
-                        id="message" 
-                        required 
-                        className="w-full min-h-[120px]" 
-                        placeholder="Please describe how we can help you..."
-                      />
-                    </div>
-
-                    <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700">
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
