@@ -1,6 +1,7 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -24,8 +25,35 @@ const Contact = () => {
     { label: "NGO Darpan ID", value: "MH/00003361", date: "Active" }
   ];
 
+  const seoData = {
+    title: "Contact DSSGM Sanstha - De-addiction NGO in Amravati, Maharashtra",
+    description: "Contact DSSGM Sanstha for de-addiction services, tribal education programs, and social empowerment initiatives. Located in Karla, Amravati. Phone: 9423133906, Email: dskd12@rediffmail.com",
+    keywords: "contact DSSGM Sanstha, de-addiction center contact Amravati, NGO contact Maharashtra, addiction treatment center contact",
+    canonicalUrl: "https://dssgm-sanstha.org/contact",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "NGO",
+        "name": "DSSGM Sanstha",
+        "telephone": "+91-9423133906",
+        "email": "dskd12@rediffmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "At Post Karla, Ta Anjangaon Surji",
+          "addressLocality": "Amravati",
+          "addressRegion": "Maharashtra",
+          "postalCode": "444705",
+          "addressCountry": "IN"
+        },
+        "openingHours": "Mo-Sa 09:00-18:00"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead {...seoData} />
       <Navigation />
       
       {/* Hero Section */}
@@ -125,6 +153,7 @@ const Contact = () => {
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
                   className="w-full"
+                  title="DSSGM Sanstha Location Map - De-addiction Center in Karla, Amravati"
                 />
               </div>
             </div>

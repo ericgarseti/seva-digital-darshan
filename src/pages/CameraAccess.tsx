@@ -1,13 +1,38 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Camera } from "lucide-react";
 
 const CameraAccess = () => {
+  const seoData = {
+    title: "Live Camera Access - DSSGM Sanstha Transparency Initiative | Amravati NGO",
+    description: "Access live camera feeds from DSSGM Sanstha de-addiction center for complete transparency. View our facilities 24/7 through iVMS-4500 app. Promoting accountability in addiction treatment services.",
+    keywords: "live camera DSSGM Sanstha, CCTV access de-addiction center, transparency NGO Maharashtra, iVMS-4500 setup, addiction center monitoring",
+    canonicalUrl: "https://dssgm-sanstha.org/camera-access",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Live Camera Access - Transparency Initiative",
+      "description": "Access live camera feeds from DSSGM Sanstha facilities for transparency and accountability",
+      "provider": {
+        "@type": "NGO",
+        "name": "DSSGM Sanstha",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Amravati",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        }
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead {...seoData} />
       <Navigation />
       
       {/* Hero Section */}
@@ -49,7 +74,7 @@ const CameraAccess = () => {
                   <div className="bg-white p-4 rounded-lg shadow-lg">
                     <img 
                       src="/src/img/cctvqr/qrcode.png" 
-                      alt="QR Code for iVMS-4500 Setup"
+                      alt="QR Code for iVMS-4500 Setup - DSSGM Sanstha Camera Access"
                       className="w-64 h-64 object-contain"
                     />
                   </div>
@@ -133,7 +158,6 @@ const CameraAccess = () => {
         </div>
       </section>
 
-      {/* Access Information */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -176,7 +200,6 @@ const CameraAccess = () => {
         </div>
       </section>
 
-      {/* Technical Information */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -232,7 +255,6 @@ const CameraAccess = () => {
         </div>
       </section>
 
-      {/* Support Information */}
       <section className="py-16 bg-violet-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Need Help with Camera Access?</h2>

@@ -1,11 +1,36 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const About = () => {
+  const seoData = {
+    title: "About DSSGM Sanstha - Leading De-addiction NGO in Maharashtra Since 1995",
+    description: "Learn about DSSGM Sanstha's 30-year journey in de-addiction, tribal education, and social empowerment. Established 1995, recognized by Ministry of Social Justice & Empowerment, Government of India.",
+    keywords: "about DSSGM Sanstha, NGO history Maharashtra, de-addiction center foundation, NAPDDR recognized NGO, addiction treatment organization",
+    canonicalUrl: "https://dssgm-sanstha.org/about",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "NGO",
+        "name": "DSSGM Sanstha",
+        "foundingDate": "1995-12-07",
+        "description": "Leading NGO providing de-addiction services, tribal education, and social empowerment in Maharashtra",
+        "knowsAbout": [
+          "De-addiction Services",
+          "Drug Rehabilitation", 
+          "Tribal Education",
+          "Social Empowerment"
+        ]
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead {...seoData} />
       <Navigation />
       
       {/* Hero Section */}
@@ -61,7 +86,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Registration Details */}
           <div className="bg-gray-50 rounded-lg p-8 mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Legal Recognition & Registration</h2>
             
@@ -108,7 +132,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Recognition */}
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Government Recognition</h2>
             <div className="bg-green-50 border border-green-200 rounded-lg p-8">
@@ -124,7 +147,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Impact Numbers */}
           <div className="bg-blue-800 text-white rounded-lg p-8">
             <h2 className="text-3xl font-bold mb-8 text-center">Our Impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
