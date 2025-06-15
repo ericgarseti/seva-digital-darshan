@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
@@ -282,12 +281,6 @@ const Gallery = () => {
                     alt={image.title}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-end">
-                    <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="font-semibold text-lg mb-1">{image.title}</h3>
-                      <p className="text-sm opacity-90">{image.description}</p>
-                    </div>
-                  </div>
                 </div>
               </Card>
             ))}
