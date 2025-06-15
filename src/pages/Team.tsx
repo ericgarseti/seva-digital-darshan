@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,21 +10,18 @@ const Team = () => {
       name: "Smt. Umatai Gajanan Dalu",
       position: "President",
       role: "Chief Executive & Strategic Leader",
-      experience: "25+ years in social service",
       description: "Leading the organization with dedication and vision since its inception. Overseeing all major initiatives and ensuring the organization's mission is fulfilled."
     },
     {
       name: "Mahadev Manohar Bhambere",
       position: "Secretary",
       role: "Administrative Head & Operations Manager",
-      experience: "20+ years in NGO management",
       description: "Managing day-to-day operations and ensuring smooth execution of all programs. Liaison with government agencies and partner organizations."
     },
     {
       name: "Dnyandeep Yadukarrao Yewale",
       position: "Trustee",
       role: "Program Development & Implementation",
-      experience: "15+ years in social work",
       description: "Overseeing program development and implementation, with special focus on educational initiatives in tribal areas."
     }
   ];
@@ -61,34 +59,26 @@ const Team = () => {
             </Card>
           </div>
 
-          {/* Team Members */}
-          <div className="space-y-12">
+          {/* Team Members - Vertical Tiles */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+              <Card key={index} className="hover:shadow-lg transition-shadow h-full">
+                <div className="p-6 text-center h-full flex flex-col">
                   {/* Profile Section */}
-                  <div className="lg:col-span-1">
-                    <div className="text-center lg:text-left">
-                      <div className="w-32 h-32 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full mx-auto lg:mx-0 mb-4 flex items-center justify-center">
-                        <span className="text-3xl font-bold text-white">
-                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-                        </span>
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                      <Badge variant="secondary" className="mb-2 text-sm">{member.position}</Badge>
-                      <p className="text-teal-600 font-semibold mb-3">{member.role}</p>
-                      <p className="text-sm text-gray-600">{member.experience}</p>
+                  <div className="mb-6">
+                    <div className="w-32 h-32 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <span className="text-3xl font-bold text-white">
+                        {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                      </span>
                     </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                    <Badge variant="secondary" className="mb-2 text-sm">{member.position}</Badge>
+                    <p className="text-teal-600 font-semibold mb-4">{member.role}</p>
                   </div>
 
-                  {/* Details Section */}
-                  <div className="lg:col-span-2">
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">About</h4>
-                        <p className="text-gray-700">{member.description}</p>
-                      </div>
-                    </div>
+                  {/* Description Section */}
+                  <div className="flex-grow">
+                    <p className="text-gray-700 text-sm leading-relaxed">{member.description}</p>
                   </div>
                 </div>
               </Card>
