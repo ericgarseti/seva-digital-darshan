@@ -48,7 +48,7 @@ const CameraAccess = () => {
                 <CardContent className="flex justify-center">
                   <div className="bg-white p-4 rounded-lg shadow-lg">
                     <img 
-                      src="/lovable-uploads/c3ddb4e9-3637-497a-a645-f07392c2dcdd.png" 
+                      src="/src/img/cctvqr/qrcode.png" 
                       alt="QR Code for iVMS-4500 Setup"
                       className="w-64 h-64 object-contain"
                     />
