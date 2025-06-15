@@ -1,48 +1,19 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      type: "Main Office",
-      address: "C/o Umatai Gajanan Dalu, President",
-      location: "At Post Karla, Ta Anjangaon Surji, Dist. Amravati (MS) 444705",
-      phones: ["9423133906", "9403303971", "9096197173"],
-      email: "dskd12@rediffmail.com",
-      hours: "Monday - Saturday: 9:00 AM - 6:00 PM"
-    }
-  ];
-
-  const registrationDetails = [
-    { label: "Society Registration", value: "Mah./5246/Amravati", date: "07/12/1995" },
-    { label: "Trust Registration", value: "F-5357 (Amravati)", date: "25/01/1996" },
-    { label: "Niti Aayog Unique ID", value: "MH/2009/0015482", date: "Active" },
-    { label: "NGO Darpan ID", value: "MH/00003361", date: "Active" }
-  ];
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted");
-  };
-
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-emerald-700 to-emerald-500 text-white py-16">
+      <section className="bg-gradient-to-r from-red-700 to-red-500 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Get in touch with us to learn more about our programs, volunteer opportunities, or partnership possibilities
+              Get in touch with us to learn more about our work or how you can get involved
             </p>
           </div>
         </div>
@@ -56,131 +27,169 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Get In Touch</h2>
               
-              {contactInfo.map((contact, index) => (
-                <Card key={index} className="mb-6 border-l-4 border-l-emerald-500">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-emerald-800">{contact.type}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">📍</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
+                    <p className="text-gray-600">
+                      C/o Umatai Gajanan Dalu, President<br />
+                      At Post Karla, Ta Anjangaon Surji<br />
+                      Dist. Amravati (MS) 444705
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">📞</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone Numbers</h3>
+                    <p className="text-gray-600">
+                      Primary: 9423133906<br />
+                      Secondary: 9403303971<br />
+                      Alternate: 9096197173
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">✉️</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                    <p className="text-gray-600">dskd12@rediffmail.com</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Operating Hours */}
+              <div className="mt-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Operating Hours</h3>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Address</h4>
-                      <p className="text-gray-700">{contact.address}</p>
-                      <p className="text-gray-700">{contact.location}</p>
+                      <p className="font-semibold text-gray-900">Monday - Friday</p>
+                      <p className="text-gray-600">9:00 AM - 6:00 PM</p>
                     </div>
-                    
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Phone Numbers</h4>
-                      <div className="space-y-1">
-                        {contact.phones.map((phone, phoneIndex) => (
-                          <p key={phoneIndex} className="text-gray-700">
-                            <a href={`tel:${phone}`} className="hover:text-emerald-600 transition-colors">
-                              {phone}
-                            </a>
-                          </p>
-                        ))}
-                      </div>
+                      <p className="font-semibold text-gray-900">Saturday</p>
+                      <p className="text-gray-600">9:00 AM - 4:00 PM</p>
                     </div>
-                    
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Email</h4>
-                      <p className="text-gray-700">
-                        <a href={`mailto:${contact.email}`} className="hover:text-emerald-600 transition-colors">
-                          {contact.email}
-                        </a>
-                      </p>
+                      <p className="font-semibold text-gray-900">Sunday</p>
+                      <p className="text-gray-600">Emergency Only</p>
                     </div>
-                    
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Office Hours</h4>
-                      <p className="text-gray-700">{contact.hours}</p>
+                      <p className="font-semibold text-gray-900">Emergency</p>
+                      <p className="text-gray-600">24/7 Available</p>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-
-              {/* Quick Actions */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-gray-900">Quick Actions</h3>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button className="bg-emerald-600 hover:bg-emerald-700">
-                    <a href="tel:9423133906" className="flex items-center">
-                      📞 Call Now
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-                    <a href="mailto:dskd12@rediffmail.com" className="flex items-center">
-                      ✉️ Send Email
-                    </a>
-                  </Button>
+                  </div>
                 </div>
               </div>
             </div>
-
+            
             {/* Contact Form */}
             <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900">Send Us a Message</CardTitle>
-                  <p className="text-gray-600">
-                    Fill out the form below and we'll get back to you as soon as possible.
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                          First Name *
-                        </label>
-                        <Input id="firstName" type="text" required className="w-full" />
-                      </div>
-                      <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                          Last Name *
-                        </label>
-                        <Input id="lastName" type="text" required className="w-full" />
-                      </div>
-                    </div>
-
+              <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
+                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                        First Name
                       </label>
-                      <Input id="email" type="email" required className="w-full" />
-                    </div>
-
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
-                      </label>
-                      <Input id="phone" type="tel" className="w-full" />
-                    </div>
-
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                        Subject *
-                      </label>
-                      <Input id="subject" type="text" required className="w-full" />
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Message *
-                      </label>
-                      <Textarea 
-                        id="message" 
-                        required 
-                        className="w-full min-h-[120px]" 
-                        placeholder="Please describe how we can help you..."
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                        required
                       />
                     </div>
-
-                    <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700">
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                        Last Name
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                      Subject
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                      required
+                    >
+                      <option value="">Select a subject</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="volunteer">Volunteer Opportunities</option>
+                      <option value="donation">Donation Information</option>
+                      <option value="services">Services Information</option>
+                      <option value="partnership">Partnership</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                      required
+                    ></textarea>
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    className="w-full bg-red-600 text-white py-3 px-6 rounded-md hover:bg-red-700 transition-colors font-semibold"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -189,67 +198,23 @@ const Contact = () => {
       {/* Registration Information */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Legal Registration Details</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our organization is fully registered and recognized under various legal frameworks
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {registrationDetails.map((detail, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <CardTitle className="text-sm text-emerald-800">{detail.label}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold text-gray-900 mb-1">{detail.value}</p>
-                  <Badge variant="secondary" className="text-xs">{detail.date}</Badge>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Additional Legal Info */}
-          <div className="bg-white rounded-lg p-8 shadow-sm">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Legal Framework</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold text-gray-800 mb-2">Registered Under</h4>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  <li>Societies Registration Act, 1860</li>
-                  <li>Bombay Public Trust Act, 1950</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-800 mb-2">Government Recognition</h4>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  <li>Ministry of Social Justice & Empowerment, GoI</li>
-                  <li>NAPDDR Scheme Recognition</li>
-                </ul>
-              </div>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Legal Information</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h3 className="text-lg font-semibold text-red-700 mb-2">Niti Aayog ID</h3>
+              <p className="text-gray-600">MH/2009/0015482</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Location Map Placeholder */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-lg text-gray-600">
-              Located in Karla, Ta. Anjangaon Surji, Dist. Amravati, Maharashtra
-            </p>
-          </div>
-          
-          <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-4xl mb-4">🗺️</div>
-              <p className="text-gray-600">Interactive map will be available soon</p>
-              <p className="text-sm text-gray-500 mt-2">
-                Contact us for detailed directions to our facilities
-              </p>
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h3 className="text-lg font-semibold text-red-700 mb-2">NGO ID</h3>
+              <p className="text-gray-600">MH/00003361</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h3 className="text-lg font-semibold text-red-700 mb-2">Society Reg.</h3>
+              <p className="text-gray-600">Mah./5246/Amravati</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h3 className="text-lg font-semibold text-red-700 mb-2">Trust Reg.</h3>
+              <p className="text-gray-600">F-5357 (Amravati)</p>
             </div>
           </div>
         </div>
