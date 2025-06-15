@@ -1,33 +1,78 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const Infrastructure = () => {
   const facilities = [
     {
       name: "Siddhi IRCA Center, Pathrot",
       type: "De-addiction Facility",
-      image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=600&h=400&fit=crop",
-      description: "Modern rehabilitation center with residential facilities, medical units, and counseling rooms."
+      status: "Operational",
+      capacity: "50 beds",
+      features: [
+        "Medical facility with qualified doctors",
+        "Counseling rooms for individual therapy",
+        "Group therapy halls",
+        "Recreation and yoga areas",
+        "Kitchen and dining facilities",
+        "Accommodation for long-term patients"
+      ],
+      location: "Pathrot, Amravati District"
     },
     {
-      name: "Sankalp IRCA, Karla",
-      type: "Community Center",
-      image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop",
-      description: "Community-based center for outpatient services and local outreach programs."
+      name: "Sankalp IRCA Center, Karla",
+      type: "Community Rehabilitation Center",
+      status: "Operational",
+      capacity: "30 beds + OPD",
+      features: [
+        "Out-patient consultation rooms",
+        "Community meeting hall",
+        "Counseling and therapy rooms",
+        "Administrative offices",
+        "Library and resource center",
+        "Computer training facility"
+      ],
+      location: "Karla, Ta. Anjangaon Surji"
     },
     {
       name: "Shri Swami Gajanan Madhyamik Vidyalay",
       type: "Educational Institution",
-      image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop",
-      description: "Secondary school serving tribal children in Garajdari with modern educational facilities."
+      status: "Operational",
+      capacity: "300+ students",
+      features: [
+        "15 well-equipped classrooms",
+        "Science and computer laboratories",
+        "Library with 2000+ books",
+        "Sports ground and playground",
+        "Staff quarters",
+        "Hostel facilities for tribal students"
+      ],
+      location: "Garajdari, Melghat"
     },
     {
       name: "Shri Swami Samarth Madhyamik Vidyalay",
       type: "Educational Institution",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop",
-      description: "Another vital educational institution in Morgad providing quality education to tribal communities."
+      status: "Operational",
+      capacity: "250+ students",
+      features: [
+        "12 modern classrooms",
+        "Digital learning center",
+        "Multipurpose hall",
+        "Teacher training facility",
+        "Student welfare center",
+        "Transportation facility"
+      ],
+      location: "Morgad, Melghat"
     }
+  ];
+
+  const infrastructureStats = [
+    { label: "Total Buildings", value: "8+", description: "Owned and rented facilities" },
+    { label: "Bed Capacity", value: "80+", description: "In-patient treatment beds" },
+    { label: "Educational Seats", value: "550+", description: "Student capacity across schools" },
+    { label: "Service Areas", value: "2", description: "Amravati District & Melghat" }
   ];
 
   return (
@@ -35,12 +80,12 @@ const Infrastructure = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-teal-700 to-teal-500 text-white py-16">
+      <section className="bg-gradient-to-r from-indigo-700 to-indigo-500 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Infrastructure</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Facilities & Infrastructure</h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Modern facilities strategically located to serve communities across Amravati District and Melghat
+              Modern facilities and well-equipped infrastructure supporting our comprehensive programs
             </p>
           </div>
         </div>
@@ -50,132 +95,197 @@ const Infrastructure = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Facilities</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Infrastructure Overview</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our infrastructure spans across both owned and rented properties, strategically positioned 
-              to maximize our reach and impact in the communities we serve.
+              Our infrastructure spans across Amravati District and the Melghat tribal area, 
+              providing essential services through strategically located facilities.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {facilities.map((facility, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <img
-                  src={facility.image}
-                  alt={facility.name}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">
-                      {facility.type}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{facility.name}</h3>
-                  <p className="text-gray-600">{facility.description}</p>
-                </div>
-              </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+            {infrastructureStats.map((stat, index) => (
+              <Card key={index} className="text-center border-l-4 border-l-indigo-500">
+                <CardHeader>
+                  <div className="text-3xl font-bold text-indigo-600 mb-2">{stat.value}</div>
+                  <CardTitle className="text-lg text-gray-800">{stat.label}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600">{stat.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Location Map */}
+      {/* Facility Details */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Locations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-lg font-semibold text-teal-700 mb-3">Headquarters</h3>
-              <p className="text-gray-600 text-sm mb-2">At Post Karla</p>
-              <p className="text-gray-600 text-sm mb-2">Ta. Anjangaon Surji</p>
-              <p className="text-gray-600 text-sm">Dist. Amravati (MS) 444705</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-lg font-semibold text-teal-700 mb-3">Pathrot Center</h3>
-              <p className="text-gray-600 text-sm mb-2">Siddhi IRCA</p>
-              <p className="text-gray-600 text-sm mb-2">De-addiction Facility</p>
-              <p className="text-gray-600 text-sm">Amravati District</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h3 className="text-lg font-semibold text-teal-700 mb-3">Melghat Region</h3>
-              <p className="text-gray-600 text-sm mb-2">Garajdari & Morgad</p>
-              <p className="text-gray-600 text-sm mb-2">Educational Institutions</p>
-              <p className="text-gray-600 text-sm">Tribal Area</p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Facilities</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Detailed overview of our major facilities and their capabilities
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {facilities.map((facility, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <CardTitle className="text-xl text-gray-900 mb-2">{facility.name}</CardTitle>
+                      <CardDescription className="text-lg">{facility.type}</CardDescription>
+                    </div>
+                    <div className="flex gap-2 mt-2 sm:mt-0">
+                      <Badge variant="secondary" className="bg-green-100 text-green-800">
+                        {facility.status}
+                      </Badge>
+                      <Badge variant="outline">{facility.capacity}</Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="lg:col-span-2">
+                      <h4 className="font-semibold text-gray-800 mb-3">Key Features & Amenities</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        {facility.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-start">
+                            <span className="text-green-500 mr-2 mt-1">✓</span>
+                            <span className="text-gray-700 text-sm">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-3">Location</h4>
+                      <p className="text-gray-600 text-sm mb-4">{facility.location}</p>
+                      
+                      <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+                        <h5 className="font-semibold text-indigo-800 text-sm mb-2">Access Information</h5>
+                        <p className="text-indigo-700 text-xs">
+                          Facilities are accessible by road and public transport. 
+                          Contact us for detailed directions and visiting arrangements.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Facility Features */}
+      {/* Infrastructure Development */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Facility Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🏥</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Medical Facilities</h3>
-              <p className="text-gray-600 text-sm">Equipped with modern medical equipment for treatment and rehabilitation</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📚</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Educational Spaces</h3>
-              <p className="text-gray-600 text-sm">Classrooms and learning environments designed for effective education</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🏠</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Residential Units</h3>
-              <p className="text-gray-600 text-sm">Comfortable accommodation for patients undergoing treatment</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🤝</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Community Halls</h3>
-              <p className="text-gray-600 text-sm">Spaces for group activities, meetings, and community gatherings</p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Infrastructure Development</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our commitment to continuous improvement and expansion of facilities
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-l-4 border-l-blue-500">
+              <CardHeader>
+                <CardTitle className="text-xl text-blue-800">Owned Properties</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <p className="text-gray-700">
+                    We own several key facilities that provide stability and long-term service delivery:
+                  </p>
+                  <ul className="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Main administrative building in Karla</li>
+                    <li>Primary treatment facilities</li>
+                    <li>Educational infrastructure in tribal areas</li>
+                    <li>Staff accommodation quarters</li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-green-500">
+              <CardHeader>
+                <CardTitle className="text-xl text-green-800">Rented & Partnership Facilities</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <p className="text-gray-700">
+                    Strategic partnerships and rental agreements expand our reach:
+                  </p>
+                  <ul className="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Additional treatment centers</li>
+                    <li>Community outreach offices</li>
+                    <li>Temporary program venues</li>
+                    <li>Emergency accommodation facilities</li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Future Development */}
-      <section className="py-16 bg-teal-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Future Development Plans</h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            We are continuously working to expand and improve our infrastructure to better serve 
-            our communities and reach more people in need.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div className="bg-teal-700 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold mb-3">Expansion Plans</h3>
-              <p className="text-sm opacity-90">
-                Adding new facilities in underserved areas to increase our reach and impact.
-              </p>
-            </div>
-            <div className="bg-teal-700 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold mb-3">Technology Integration</h3>
-              <p className="text-sm opacity-90">
-                Implementing modern technology for better patient care and educational delivery.
-              </p>
-            </div>
-            <div className="bg-teal-700 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold mb-3">Sustainability</h3>
-              <p className="text-sm opacity-90">
-                Developing eco-friendly and sustainable infrastructure for long-term impact.
-              </p>
-            </div>
+      {/* Future Plans */}
+      <section className="py-16 bg-indigo-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Future Infrastructure Plans</h2>
+            <p className="text-lg opacity-90 max-w-3xl mx-auto">
+              Expanding our infrastructure to serve more communities and enhance service delivery
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="bg-white/10 border-white/20 text-white">
+              <CardHeader>
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-xl">🏥</span>
+                </div>
+                <CardTitle>Enhanced Medical Facilities</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/80 text-sm">
+                  Upgrading medical infrastructure with modern equipment and expanded capacity 
+                  for better patient care and treatment outcomes.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-white/20 text-white">
+              <CardHeader>
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-xl">🏫</span>
+                </div>
+                <CardTitle>Educational Expansion</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/80 text-sm">
+                  Building additional schools and upgrading existing educational facilities 
+                  to reach more children in remote tribal areas.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-white/20 text-white">
+              <CardHeader>
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-xl">🌐</span>
+                </div>
+                <CardTitle>Digital Infrastructure</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/80 text-sm">
+                  Implementing digital solutions for better service delivery, 
+                  patient management, and educational technology integration.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
