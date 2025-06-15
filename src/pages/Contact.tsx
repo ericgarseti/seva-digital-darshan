@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -39,11 +40,11 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Information */}
+      {/* Contact Information & Location */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            {/* Contact Details */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Get In Touch */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Get In Touch</h2>
               
@@ -106,6 +107,24 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+
+            {/* Find Us */}
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Find Us</h2>
+              <p className="text-lg text-gray-600 text-center mb-8">
+                Located in Karla, Ta. Anjangaon Surji, Dist. Amravati, Maharashtra
+              </p>
+              
+              <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🗺️</div>
+                  <p className="text-gray-600">Interactive map will be available soon</p>
+                  <p className="text-sm text-gray-500 mt-2">
+                    Contact us for detailed directions to our facilities
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,28 +171,6 @@ const Contact = () => {
                   <li>NAPDDR Scheme Recognition</li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Location Map Placeholder */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-lg text-gray-600">
-              Located in Karla, Ta. Anjangaon Surji, Dist. Amravati, Maharashtra
-            </p>
-          </div>
-          
-          <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-4xl mb-4">🗺️</div>
-              <p className="text-gray-600">Interactive map will be available soon</p>
-              <p className="text-sm text-gray-500 mt-2">
-                Contact us for detailed directions to our facilities
-              </p>
             </div>
           </div>
         </div>
